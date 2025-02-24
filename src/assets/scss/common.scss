@@ -1,0 +1,165 @@
+@import "./variables.scss";
+
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+html body {
+  font-family: 'Trajan Pro Regular';
+}
+
+.background {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.background::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.background-opacity {
+  background: rgba(0, 0, 0, 0.4);
+  height: auto;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.normal-button-fake {
+  border: 1px solid $inline-color;
+  padding: 10px 25px;
+  min-width: 123.758px;
+  color: $text-color;
+  text-align: center;
+  font-family: 'Trajan Pro Regular';
+  background-color: $inline-color;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.unnormal-button {
+  border: 1px solid $inline-color;
+  padding: 10px 25px;
+  color: #cccccc;
+  font-family: 'Trajan Pro Regular';
+  background-color: #888888;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.normal-button {
+  border: 1px solid $inline-color;
+  padding: 10px 25px;
+  color: $text-color;
+  font-family: 'Trajan Pro Regular';
+  cursor: pointer;
+  background-color: #161514;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.normal-button:hover {
+  background-color: $inline-color;
+}
+
+.normal-button:active {
+  background-color: $active-color;
+}
+
+.normal-button-actived {
+  border: 1px solid $inline-color;
+  padding: 10px 25px;
+  color: $text-color;
+  background-color: $active-color;
+  font-family: 'Trajan Pro Regular';
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.space {
+  height: 45px;
+}
+
+.box {
+  border: 1px solid $outline-color;
+  width: 100%;
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .box-title {
+    font-family: 'Trajan Pro Bold';
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $outline-color;
+    padding: 10px;
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .box-content {
+    display: flex;
+    padding: 20px;
+  }
+}
+
+.button-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.line {
+  border: 1px solid $outline-color;
+  margin: 20px 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.none-pc {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrap {
+    display: none;
+  }
+
+  .none-pc {
+    padding-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}

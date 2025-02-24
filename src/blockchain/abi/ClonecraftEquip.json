@@ -1,0 +1,647 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_v3",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_store",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_assetStore",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_priceCalculator",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_dsc",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_cnd",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "background",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "situation",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "weapon",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "body",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tattoo",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mouth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eyes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clothes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "accessory",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hat",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mask",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "effect",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IEquipStorage.Equip",
+        "name": "_state",
+        "type": "tuple"
+      }
+    ],
+    "name": "EquipState",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "asset",
+    "outputs": [
+      {
+        "internalType": "contract IClonesNeverDieAsset",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "assetStore",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cnd",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "dsc",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "tokenIds",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "equip",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "equipStorage",
+    "outputs": [
+      {
+        "internalType": "contract IEquipStorage",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "tokenIds",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "getAssetType",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getEquipAssetState",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "background",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "situation",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "weapon",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "body",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tattoo",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mouth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eyes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clothes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "accessory",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hat",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mask",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "effect",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IEquipStorage.Equip",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getEquipState",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "background",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "situation",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "weapon",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "body",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tattoo",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mouth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eyes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clothes",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "accessory",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hat",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "mask",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "effect",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IEquipStorage.Equip",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_keyToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_keyTokenAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_pathA",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_pathB",
+        "type": "address[]"
+      }
+    ],
+    "name": "getPayment",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "payableToken",
+    "outputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "priceCalculator",
+    "outputs": [
+      {
+        "internalType": "contract IPriceCalculator",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "setAssetStore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "setCND",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "setDSC",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_pathA",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_pathB",
+        "type": "address[]"
+      }
+    ],
+    "name": "setKeyToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "setPriceCalculator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "tokenIds",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "unequip",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "v3",
+    "outputs": [
+      {
+        "internalType": "contract IClonesNeverDie",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "assetTypes",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "v3AssetIdsFromAssetTypes",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

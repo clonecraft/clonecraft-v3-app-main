@@ -1,0 +1,101 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_klayswapUtils",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_klayswapHelper",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_lp",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "klayswapHelper",
+    "outputs": [
+      {
+        "internalType": "contract Helper",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "klayswapUtils",
+    "outputs": [
+      {
+        "internalType": "contract Utils",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lp",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "keyToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "keyTokenAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address[]",
+        "name": "pathA",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "pathB",
+        "type": "address[]"
+      }
+    ],
+    "name": "lpTokenAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
